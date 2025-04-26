@@ -20,5 +20,5 @@ jobs:
       with:
         azcliversion: latest
         inlineScript: |
-          az account show
+          az account get-access-token --resource-type arm | jq -r .accessToken
           # You can write your Azure CLI inline scripts here.
