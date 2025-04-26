@@ -22,5 +22,5 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az rest --method GET --url "https://management.azure.com/subscriptions/c2774e38-5dce-4bcc-b96d-77624dcaf211/resources?api-version=2021-04-01"
+            az storage container list --account-name iamazurelab3c5733a62
 
