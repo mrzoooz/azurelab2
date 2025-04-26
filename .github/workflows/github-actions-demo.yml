@@ -1,0 +1,6 @@
+name: Github Actions Demo
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
