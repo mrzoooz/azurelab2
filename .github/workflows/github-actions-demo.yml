@@ -22,5 +22,5 @@ jobs:
         with:
           azcliversion: latest
           inlineScript: |
-            az storage blob download --container-name flag --name flag.txt --file flag.txt --account-name iamazurelab3c5733a62
+            az storage blob download --container-name flag --name flag.txt --file flag.txt --account-name iamazurelab3c5733a62 --auth-mode login
 
