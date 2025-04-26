@@ -1,6 +1,21 @@
-name: Github Actions Demo
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+name: Run Azure Login with OIDC
+on: [push]
+
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Az CLI login'
+        uses: azure/login@a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0
+        with:
+          client-id: 0ee64498-2d07-4677-8fcd-daa92682d2e5
+          tenant-id: fdd066e1-ee37-49bc-b08f-d0e152119b04
+          subscription-id: c2774e38-5dce-4bcc-b96d-77624dcaf211
+
+      - name: 'Run az commands'
+        run: |
+          az account show
+          az group list
